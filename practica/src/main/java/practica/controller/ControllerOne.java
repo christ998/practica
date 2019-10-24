@@ -10,5 +10,10 @@ public class ControllerOne {
 	public String index() {
 		return "index";
 	}
+        
+        @GetMapping("/index")
+        public String menu(){
+            return "login";
+        }
 
 }
