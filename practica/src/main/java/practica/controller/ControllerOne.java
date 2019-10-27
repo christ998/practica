@@ -15,5 +15,9 @@ public class ControllerOne {
         public String menu(){
             return "login";
         }
+        @GetMapping("/login")
+        public String login(){
+	        return "inicio";
+        }
 
 }
