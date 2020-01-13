@@ -1,11 +1,9 @@
 package practica.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import practica.modelo.User;
+
 
 @Controller
 public class ControllerOne {
@@ -17,15 +15,21 @@ public class ControllerOne {
 
         @GetMapping("/login")
         public String login(){
-	        return "login";
+
+		return "login";
         }
         @GetMapping("/inicio")
         public String inicio(Model model){
-	        model.addAttribute("ej",3);
 	        return "administrador";
 	    }
 	    @GetMapping("/admin")
 		public String admin(){
-			return "administrador";
+
+		return "administrador";
+		}
+
+		@GetMapping
+		public String caudal(){
+			return "#";
 		}
 }
