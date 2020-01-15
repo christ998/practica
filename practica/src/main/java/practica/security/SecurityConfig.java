@@ -40,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                  .defaultSuccessUrl("/admin")
                  .failureUrl("/login?error=true")
                  .usernameParameter("email")
-                 .passwordParameter("clave");
+                 .passwordParameter("clave")
+                .and().csrf().disable();
 
     }
 }
