@@ -25,7 +25,20 @@
         <div id="wrapper">
             <div><canvas id="myChart" width="400" height="400"></canvas></div>
             <div><canvas id="myChart2" width="400" height="400"></canvas></div>
-            <div th:text="${dato}"></div>
+            <div th:width="400" th:height="400">
+                <table border="1">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Presión</th>
+                        <th>Turbidez</th>
+                    </tr>
+                    <tr th:each="json: ${dato}">
+                        <td th:text="${json.getTimeStamp()}"></td>
+                        <td th:text="${json.getPresion()}"></td>
+                        <td th:text="${json.getTurbidez()}"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 

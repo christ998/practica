@@ -5,35 +5,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import practica.modelo.DAO.DatosDAO;
+import practica.modelo.Dato;
+
+import java.util.List;
 
 
 @Controller
 public class ControllerOne {
 
-	@Autowired
-	private DatosDAO datosDAO;
-	@GetMapping("/")
-	public String index() {
-		return "inicioweb";
-	}
+    @Autowired
+    private DatosDAO datosDAO;
 
-        @GetMapping("/login")
-        public String login(){
+    @GetMapping("/")
+    public String index() {
+        return "inicioweb";
+    }
 
-		return "login";
-        }
-        @GetMapping("/inicio")
-        public String inicio(Model model){
-		return "administrador";
-	    }
-	    @GetMapping("/admin")
-		public String admin(){
+    @GetMapping("/login")
+    public String login() {
 
-		return "administrador";
-		}
+        return "login";
+    }
 
-		@GetMapping
-		public String caudal(){
-			return "#";
-		}
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        List<Dato> datos = datosDAO.findAll();
+        model.addAttribute("dato", datos);
+        return "administrador";
+    }
+
+    @GetMapping
+    public String caudal() {
+        return "#";
+    }
 }

@@ -14,11 +14,12 @@ public class ControllerData {
     private DatosDAO datosDAO;
 
     @RequestMapping(value = "/data", method = RequestMethod.GET)
-    public List<Dato> retornaTodo(){
+    public List<Dato> retornaTodo() {
         return datosDAO.findAll();
     }
+
     @PostMapping(value = "/data", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void guarda(@RequestBody Dato dato){
+    public void guarda(@RequestBody Dato dato) {
         datosDAO.save(dato);
     }
 }
