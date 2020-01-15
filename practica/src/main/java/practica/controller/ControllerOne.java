@@ -24,7 +24,6 @@ public class ControllerOne {
         }
         @GetMapping("/inicio")
         public String inicio(Model model){
-	    model.addAttribute("dato", datosDAO.findAll());
 		return "administrador";
 	    }
 	    @GetMapping("/admin")
