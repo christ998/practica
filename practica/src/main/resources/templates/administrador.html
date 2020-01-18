@@ -31,11 +31,13 @@
                         <th>Fecha</th>
                         <th>Presión</th>
                         <th>Turbidez</th>
+			<th>Caudal</th>
                     </tr>
                     <tr th:each="json: ${dato}">
                         <td th:text="${json.getTimeStamp()}"></td>
                         <td th:text="${json.getPresion()}"></td>
                         <td th:text="${json.getTurbidez()}"></td>
+			<td th:text="${json.getCaudal()}"></td>
                     </tr>
                 </table>
                 <canvas id="myChart3"></canvas>

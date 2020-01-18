@@ -11,6 +11,8 @@ public class Dato {
     private int turbidez;
 
     private int presion;
+   
+    private int caudal;
 
     private String nivel;
 
@@ -39,6 +41,14 @@ public class Dato {
 
     public void setPresion(int presion) {
         this.presion = presion;
+    }
+
+    public void setCaudal(int caudal){
+	this.caudal = caudal;
+    }
+
+    public int getCaudal(){
+	return caudal;
     }
 
     public String getNivel() {
